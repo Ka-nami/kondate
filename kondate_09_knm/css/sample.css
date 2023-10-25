@@ -1,0 +1,53 @@
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+}
+header{
+    width: auto;
+    display: flex;
+}
+button{
+    margin-top: 100px;
+    background: transparent;
+    border: none;
+}
+button:hover{
+    transform: rotate(-20deg);
+}
+
+.sanji{
+    display: flex;
+    margin-top: 190px;
+    margin-left: 400px;
+}
+
+
+
+.results{
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color: aliceblue;
+    border: 15px solid #534122;
+    position: relative;
+    border-radius: 15px;
+    width: 600px;
+    height: 100px;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+
+#curtainLeft,
+#curtainRight{
+    top: 0;
+    width: 50%;
+    height: 1043px;;
+    background:rgb(59, 23, 23);
+    position: absolute;
+}
+
+#curtainLeft{ left: 0; z-index: 100;}
+#curtainRight{right: 0; z-index: 101;}

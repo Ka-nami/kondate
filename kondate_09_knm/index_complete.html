@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>今日の献立</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+</head>
+
+<body background="https://telesy.jp/wp-content/uploads/2020/06/one-piece_10.jpg">
+
+<header>
+<button id="startbtn"><img src="./img/barathie-.png" alt=""></button>
+</header>
+
+<div class="sanji">
+<img class="sanjii" src="./img/ryouri-removebg-preview.png" alt="">
+<div class="results">本日のおすすめは・・・<br>
+    <span id="result"></span>
+</div>
+
+</div>
+
+<script>
+
+const a = ["オムライス","カレー","鯖の煮つけ","麻婆豆腐","瓦そば","ガレット","天津飯","肉じゃが"];
+const len = a.length;
+
+$("#startbtn").on("click",function(){
+    for(let i=0; i<len; i++){
+        const r = Math.floor(Math.random()*a.length );
+        $("#result").html(a[r]);
+    }
+});
+
+function save(){
+    const kondate = document.getElementById("results").value;
+    localStorage.setItem("results",kondate)
+}
+
+$(window).load(function () {
+    if(document.getElementById("curtainLeft") === null){
+$('body').prepend('<img src="https://thumb.photo-ac.com/b9/b994b2c6ad102740cbd7ea7b8673a10d_t.jpeg" id="curtainLeft"></img>');
+    }
+    if(document.getElementById("curtainRight") === null){
+$('body').prepend('<img src="https://thumb.photo-ac.com/b9/b994b2c6ad102740cbd7ea7b8673a10d_t.jpeg" id="curtainRight"></img>');
+    }
+    $("#curtainLeft").stop().animate({width:'0',opacity:'0'}, 3000 );
+    $("#curtainRight").stop().animate({width:'0',opacity:'0'},3000 );
+    setTimeout('Eliminate()',5000);
+});
+function Eliminate() {
+    $('#curtainLeft').remove();
+    $('#curtainRight').remove();
+}
+
+// $(window).load(function () {
+//     if(document.getElementById("curtainLeft") === null){
+// $('body').prepend('<div id="curtainLeft"></div>');
+//     }
+//     if(document.getElementById("curtainRight") === null){
+// $('body').prepend('<div id="curtainRight"></div>');
+//     }
+//     $("#curtainLeft").stop().animate({width:'0',opacity:'0'}, 3000 );
+//     $("#curtainRight").stop().animate({width:'0',opacity:'0'},3000 );
+//     setTimeout('Eliminate()',5000);
+// });
+// function Eliminate() {
+//     $('#curtainLeft').remove();
+//     $('#curtainRight').remove();
+// }
+
+</script>
+
+<footer>
+</footer>
+</body>
+</html>
